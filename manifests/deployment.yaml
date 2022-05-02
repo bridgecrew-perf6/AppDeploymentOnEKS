@@ -18,7 +18,7 @@ spec:
         app: weather-app
     spec:
       containers:
-      - image: 456131486398.dkr.ecr.us-east-1.amazonaws.com/webapp:latest
-        name: prod-con
-        resources: {}
-status: {}
+        - image: nginx:latest
+          name: prod-con
+          ports:
+            - containerPort: 80
