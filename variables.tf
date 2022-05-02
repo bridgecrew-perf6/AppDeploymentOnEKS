@@ -16,3 +16,11 @@ variable "create" {
   type        = bool
   default     = true
 }
+
+variable "node_group_name" {
+  default = "dinipere-node"
+}
+
+variable "nodes_sg_name" {
+  default = "dinipere-sg"
+}

@@ -33,20 +33,3 @@ output "cluster_name" {
   value       = var.cluster_name
 }
 
-output "load_balancer_name" {
-  value = local.lb_name
-}
-
-output "load_balancer_hostname" {
-  value = kubernetes_service.nginx.status.0.load_balancer.0.ingress.0.hostname
-}
-
-output "load_balancer_info" {
-  value = data.aws_elb.demo
-}
-
-locals {
-  lb_name = split("-", split(".", kubernetes_service.nginx.status.0.load_balancer.0.ingress.0.hostname).0).0
-}
-
-
